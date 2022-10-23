@@ -1,0 +1,77 @@
+package generics;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Stack;
+
+/**
+ * Collections
+ */
+public class Collections {
+
+	static void main() {
+		ArrayList<Integer> arr = new ArrayList<Integer>();
+		arr.add(0);
+		arr.add(300);
+
+		arr.add(1, 20);
+		arr.set(0, 1);
+
+		// for (Integer item : arr) {
+		// 	System.out.println(item);
+		// }
+		Iterator<Integer> it = arr.iterator();
+		while (it.hasNext()) {
+			Integer t = it.next();
+			System.out.println(t);
+		}
+
+		ArrayList<Integer> arr2 = new ArrayList<Integer>();
+		arr2.add(4000);
+
+		arr.addAll(arr2);
+		System.out.println(
+			arr.contains(300)
+		);
+
+		System.out.println(
+			arr.contains(400)
+		);
+
+		System.out.println(
+			arr.containsAll(arr2)
+		);
+
+		arr2.add(50000);
+
+		System.out.println(
+			arr.containsAll(arr2)
+		);
+
+		System.out.println(arr.size());
+		arr.remove(Integer.valueOf(20));
+		System.out.println(arr.size());
+		arr.clear();
+		System.out.println(arr.size());
+
+		LinkedList<String> lnk = new LinkedList<String>();
+		lnk.add("Abiria");
+		lnk.add("is");
+		lnk.add("very");
+		lnk.add("cute");
+
+		for (String word : lnk) {
+			System.out.println(word);
+		}
+
+		Stack<String> stack = new Stack<String>();
+		stack.push("hello");
+		stack.push("world");
+		// stack.pop();
+
+		for (String item : stack) {
+			System.out.println(item);
+		}
+	}
+}
